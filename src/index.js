@@ -1,8 +1,7 @@
   const LIBRARIES = {
     Skill: require("../../../Libraries/Skill"),
     FS: require("fs"),
-    Path : require('path'),
-    Jf : require('jsonfile')
+    Path : require('path')
   };
 
 function addNewTodo(text, db, dbUrl){  
