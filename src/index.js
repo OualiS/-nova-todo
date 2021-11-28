@@ -4,11 +4,17 @@
     Path : require('path')
   };
 
-function addNewTodo(text, db, dbUrl){  
+function addNewTodo(text, db, dbUrl){
+  console.log(db.todo.length)  
   return new Promise(
     function(resolve,reject){
+      let newTodo 
         if (text != "" && text != undefined) {
-          let newTodo = {id : db.todo[db.todo.length - 1].id + 1, text : text }
+          if (db.todo.length == 0) {
+            newTodo = {id : 1, text : text }
+          }else{
+            newTodo = {id : db.todo[db.todo.length - 1].id + 1, text : text }
+          }
           db.todo.push(newTodo)
           LIBRARIES.FS.writeFileSync(dbUrl, JSON.stringify(db, null, 4), "utf8")
           resolve()
@@ -54,7 +60,7 @@ class Todo extends LIBRARIES.Skill {
       let result = ""
       db.todo.forEach((element, index) => {
         if (index != db.todo.length -1) {
-          result += `${element.text}, `   
+          result += `${element.text}, S`   
         }else{
           result += `${element.text}`   
         }
@@ -74,12 +80,17 @@ class Todo extends LIBRARIES.Skill {
       // console.log(_intent.Variables.text)
       let index = _intent.Variables.number
       // console.log(_intent.Variables.number)
-      deleteOneTodo(index, db, dbUrl).then(() => {
-        let x = index > 1 ? "ème" : "er"
-        _intent.answer(_socket, `Le ${index}${x} élément à été supprimé.`);
-      }).catch(() => {
-        _intent.answer(_socket, "Une erreur est survenue");
-      })
+      if (db.todo.length == 0) {
+        _intent.answer(_socket, `Aucun élément dans votre liste de chose à faire.`);
+      }else{
+        deleteOneTodo(index, db, dbUrl).then(() => {
+          let x = index > 1 ? "ème" : "er"
+          _intent.answer(_socket, `Le ${index}${x} élément à été supprimé.`);
+        }).catch(() => {
+          _intent.answer(_socket, "Une erreur est survenue");
+        })
+      }
+
     });
   }
 }
