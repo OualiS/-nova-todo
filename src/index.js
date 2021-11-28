@@ -58,22 +58,26 @@ class Todo extends LIBRARIES.Skill {
     this.Main.Manager.addAction("todo.get", function(_intent, _socket){
       let i = 0
       let result = ""
-      db.todo.forEach((element, index) => {
-        if (index != db.todo.length -1) {
-          result += `${element.text}, S`   
-        }else{
-          result += `${element.text}`   
-        }
-              
-      });
-      _intent.answer(_socket, result)
+      if (db.todo.length == 0) {
+        _intent.answer(_socket, "Votre liste est vide.")
+      }else{
+        db.todo.forEach((element, index) => {
+          if (index != db.todo.length -1) {
+            result += `${element.text}, S`   
+          }else{
+            result += `${element.text}`   
+          }
+                
+        });
+        _intent.answer(_socket, result)
+      }
     });
 
     this.Main.Manager.addAction("todo.getHowMany", function(_intent, _socket){
       let value = db.todo.length
       let tacheString = value > 1 ? "tâches" : "tâche"
       console.log(value, tacheString)
-      _intent.answer(_socket, `Vous avez ${value} ${tacheString} dans votre todo list `)
+      _intent.answer(_socket, `Vous avez ${value} ${tacheString} dans votre liste.`)
     });
 
     this.Main.Manager.addAction("todo.deleteOne", function(_intent, _socket){
@@ -85,7 +89,7 @@ class Todo extends LIBRARIES.Skill {
       }else{
         deleteOneTodo(index, db, dbUrl).then(() => {
           let x = index > 1 ? "ème" : "er"
-          _intent.answer(_socket, `Le ${index}${x} élément à été supprimé.`);
+          _intent.answer(_socket, `Le ${index}${x} élément à été supprimé de votre liste.`);
         }).catch(() => {
           _intent.answer(_socket, "Une erreur est survenue");
         })
