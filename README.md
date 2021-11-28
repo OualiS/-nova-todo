@@ -1,8 +1,8 @@
 <div align="center">
 <img src="https://github.com/HeyHeyChicken/NOVA/blob/master/resources/github-logo.svg" alt="NOVA" width="300">
 
-**NOVA - Blank Skill** is a skill for your [NOVA](//github.com/HeyHeyChicken/NOVA) assistant.<br>
-This skill is useless, except to provide you an architecture as an example to start your skills development.
+**NOVA - Todo List** is a skill for your [NOVA](//github.com/HeyHeyChicken/NOVA) assistant.<br>
+This skill is provide you the possibility to manage a todo list.
 <br><br>
 
 <img src="https://github.com/HeyHeyChicken/NOVA-Blank-Skill/blob/master/resources/github-screenshot.jpg" alt="NOVA" width="800">
@@ -18,9 +18,12 @@ This skill is useless, except to provide you an architecture as an example to st
 
 ## Features
 
-- Add your skill features here.
+- Add a task in your list
+- Delete a task
+- Display your todo list
+- Get the number of task in the list
 
 <br>
 <br>
 
-Created by [Antoine Duval (HeyHeyChicken)](//antoine.cuffel.fr) with ❤ and ☕ (chocolate) in [Mesnil-Panneville](//en.wikipedia.org/wiki/Mesnil-Panneville).
+Created by [Salah OUALI (d3Ex2)](https://github.com/OualiS) with ❤ and ☕ (chocolate)
