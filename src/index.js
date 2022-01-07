@@ -1,4 +1,6 @@
-  const LIBRARIES = {
+// Supprimer la liste entière, checker algo approximation des phrases
+
+const LIBRARIES = {
     Skill: require("../../../Libraries/Skill"),
     FS: require("fs"),
     Path : require('path')

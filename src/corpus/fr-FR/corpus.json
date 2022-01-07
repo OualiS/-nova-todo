@@ -12,35 +12,35 @@
         "Ajoute {text|0} dans ma liste des choses à faire",
         "Rajoute {text|0} dans ma liste des choses à faire",
         "Met {text|0} dans ma liste de choses à faire",
-        "Ajoute {text|0} dans ma todo list",
-        "Rajoute {text|0} dans ma todo list",
-        "Mets {text|0} dans ma todo list"
+        "Ajoute {text|0} dans ma todolist",
+        "Rajoute {text|0} dans ma todolist",
+        "Mets {text|0} dans ma todolist"
       ],
       "answers": [
-        "Très bien, j'ai ajouté : %text% dans la liste.",
-        "Très bien, j'ai ajouté : %text% dans la liste de chose à faire."
+        "Très bien, j'ai ajouté : %text%, dans la liste.",
+        "Très bien, j'ai ajouté : %text%, dans la liste de chose à faire."
       ]
     },
     {
       "intent": "todo.get",
       "utterances": [
-        "Affiche ma todo list",
-        "Affiche la todo list",
+        "Affiche ma todolist",
+        "Affiche la todolist",
         "Affiche ma liste",
         "Affiche la liste",
         "Affiche la liste de choses à faire",
         "Affiche la liste des choses à faire",
-        "Montre moi ma todo list",
-        "Montre moi ma liste",
-        "Montre moi ma liste de chose à faire",
-        "Montre moi ma liste des chose à faire"
+        "Montre-moi ma todo list",
+        "Montre-moi ma liste",
+        "Montre-moi ma liste de chose à faire",
+        "Montre-moi ma liste des chose à faire"
       ]
     },
     {
       "intent": "todo.getHowMany",
       "utterances": [
-        "J'ai combien de tâches dans ma todo list",
-        "J'ai combien de tâches dans la todo list",
+        "J'ai combien de tâches dans ma todolist",
+        "J'ai combien de tâches dans la todolist",
         "J'ai combien de tâches dans la liste",
         "J'ai combien de tâches dans ma liste",
         "J'ai combien de tâches dans la liste de choses à faire",
@@ -52,8 +52,8 @@
     {
       "intent": "todo.deleteOne",
       "utterances": [
-        "Supprime l'élément {number|1} de ma todo list",
-        "Supprime l'élément {number|1} de la todo list",
+        "Supprime l'élément {number|1} de ma todolist",
+        "Supprime l'élément {number|1} de la todolist",
         "Supprime l'élément {number|1} de ma liste",
         "Supprime l'élément {number|1} de la liste",
         "Supprime l'élément {number|1} de ma liste de choses à faire",
